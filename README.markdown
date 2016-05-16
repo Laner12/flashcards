@@ -1,0 +1,2 @@
+use simplecov
+use gitignore
