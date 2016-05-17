@@ -51,6 +51,6 @@ class GuessTest < Minitest::Test
     card = Card.new("Which planet is closest to the sun?", "Mercury")
     guess = Guess.new("Saturn", card)
 
-    assert_equal "Incorrect", guess.feedback
+    assert_equal "Incorrect.", guess.feedback
   end
 end

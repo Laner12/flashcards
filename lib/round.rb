@@ -1,31 +1,34 @@
 require "./lib/deck"
 require "./lib/card"
 require "./lib/guess"
+require "pry"
 
 class Round
   attr_reader :deck,
-              :guesses
+              :guesses,
+              :number_correct
 
   def initialize(deck)
     @deck = deck
     @guesses = []
+    @number_correct = 0
   end
 
   def current_card
-    deck.cards[0]
+    deck.cards[@guesses.count]
   end
 
   def record_guess(response)
-    @guesses << Guess.new(response, current_card)
-    @guesses.last
-  end
-
-  def number_correct
-    1
+    guess = Guess.new(response, current_card)
+    @guesses << guess
+    if response == guess.card.answer
+      @number_correct += 1
+    end
+    guess
   end
 
   def percent_correct
-    guesses.count / number_correct
+    (number_correct / @guesses.count.to_f) * 100
   end
 
 end
