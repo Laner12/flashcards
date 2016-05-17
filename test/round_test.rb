@@ -49,7 +49,7 @@ class RoundTest < Minitest::Test
     assert_instance_of Guess, round.record_guess("2")
     assert_equal 2, round.guesses.count
     assert_equal "Incorrect.", round.guesses.last.feedback
-    # assert_equal 50, round.percent_correct
+    assert_equal 50, round.percent_correct
 
   end
 
