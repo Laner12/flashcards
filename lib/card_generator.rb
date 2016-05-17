@@ -1,4 +1,3 @@
-# require "./cards"
 require "./lib/card"
 require "pry"
 
@@ -10,8 +9,8 @@ class CardGenerator
   end
 
   def cards
-    card_data = @filename.split("\n")
+    card_data = @filename.split("\n").shuffle
                          .map { |line| line.split(",") }
-    card_data.map { |q, a| Card.new(q, a) }
+    card_data.map { |question, answer| Card.new(question, answer) }
   end
 end
