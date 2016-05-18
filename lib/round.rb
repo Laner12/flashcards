@@ -50,5 +50,4 @@ class Round
     puts "****** Game over! ******"
     puts "You had #{@number_correct} correct guesses out of #{deck.count} for a score of #{percent_correct}."
   end
-
 end

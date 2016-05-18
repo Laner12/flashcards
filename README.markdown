@@ -12,6 +12,6 @@
 
 * Second, hit enter in order to run the program.
 
-* Third, enter your answer to the question provided   and hit enter to have your answer evaluated.
+* Third, enter your answer to the question provided and hit enter to have your answer evaluated.
 
 * Fourth, have fun!
