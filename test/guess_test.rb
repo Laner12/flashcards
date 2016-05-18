@@ -1,5 +1,4 @@
-require "minitest/autorun"
-require "minitest/pride"
+require "./test/testhelper"
 require "./lib/guess"
 require "./lib/card"
 
@@ -11,13 +10,18 @@ class GuessTest < Minitest::Test
     guess = Guess.new("Juneau", card)
 
     assert_instance_of Card, guess.card
+  end
+
+  def test_it_can_use_instance_of_guess
+    card = Card.new("What is the capital of Alaska?", "Juneau")
+    guess = Guess.new("Juneau", card)
+
     assert_instance_of Guess, guess
   end
 
   def test_it_can_take_in_a_response
     card = Card.new("What is the capital of Alaska?", "Juneau")
     guess = Guess.new("Juneau", card)
-    guess.card
 
     assert_equal "Juneau", guess.response
   end
@@ -25,7 +29,6 @@ class GuessTest < Minitest::Test
   def test_it_can_evaluate_correct_guesses
     card = Card.new("What is the capital of Alaska?", "Juneau")
     guess = Guess.new("Juneau", card)
-    guess.card
 
     assert_equal true, guess.correct?
   end
@@ -42,7 +45,6 @@ class GuessTest < Minitest::Test
   def test_returns_feedback_after_correct_response
     card = Card.new("What is the capital of Alaska?", "Juneau")
     guess = Guess.new("Juneau", card)
-    guess.card
 
     assert_equal "Correct!", guess.feedback
   end

@@ -1,5 +1,4 @@
-require "minitest/autorun"
-require "minitest/pride"
+require "./test/testhelper"
 require "./lib/card"
 
 class CardsTest < Minitest::Test
@@ -21,5 +20,11 @@ class CardsTest < Minitest::Test
 
     assert_equal "Juneau", card.answer
   end
+
+  # def test_it_can_count_cards
+  #   card = Card.new("What is the capital of Alaska?", "Juneau")
+  #
+  #   assert_equal "Juneau", card.count
+  # end
 
 end

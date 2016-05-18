@@ -1,5 +1,4 @@
-require "minitest/autorun"
-require "minitest/pride"
+require "./test/testhelper"
 require "./lib/card_generator"
 
 class CardGeneratorTest < Minitest::Test

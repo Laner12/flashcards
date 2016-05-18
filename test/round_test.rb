@@ -1,10 +1,8 @@
-require "minitest/autorun"
-require "minitest/pride"
+require "./test/testhelper"
 require "./lib/deck"
 require "./lib/card"
 require "./lib/round"
 require "./lib/guess"
-require "pry"
 
 class RoundTest < Minitest::Test
 
