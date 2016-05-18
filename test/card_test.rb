@@ -3,28 +3,19 @@ require "./lib/card"
 
 class CardsTest < Minitest::Test
 
-  def test_creating_a_card
-    card = Card.new("What is the capital of Alaska?", "Juneau")
+  def setup
+    @card = Card.new("What is the capital of Alaska?", "Juneau")
+  end
 
-    assert_instance_of Card, card
+  def test_creating_a_card
+    assert_instance_of Card, @card
   end
 
   def test_card_has_a_question
-    card = Card.new("What is the capital of Alaska?", "Juneau")
-
-    assert_equal "What is the capital of Alaska?", card.question
+    assert_equal "What is the capital of Alaska?", @card.question
   end
 
   def test_card_has_an_answer
-    card = Card.new("What is the capital of Alaska?", "Juneau")
-
-    assert_equal "Juneau", card.answer
+    assert_equal "Juneau", @card.answer
   end
-
-  # def test_it_can_count_cards
-  #   card = Card.new("What is the capital of Alaska?", "Juneau")
-  #
-  #   assert_equal "Juneau", card.count
-  # end
-
 end
