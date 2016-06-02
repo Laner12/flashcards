@@ -14,12 +14,12 @@ class Round
   end
 
   def current_card
-    deck.cards[@guesses.count]
+    deck.cards[guesses.count]
   end
 
   def record_guess(response)
     guess = Guess.new(response, current_card)
-    @guesses << guess
+    guesses << guess
     if response == guess.card.answer
       @number_correct += 1
     end
@@ -27,7 +27,7 @@ class Round
   end
 
   def percent_correct
-    percent = (number_correct / @guesses.count.to_f) * 100
+    percent = (number_correct / guesses.count.to_f) * 100
     "#{percent.to_i}%"
   end
 
@@ -36,8 +36,8 @@ class Round
     puts "Welcome! You're playing with 4 cards."
     puts "-------------------------------------------------"
     puts "\n"
-    while current_card != nil
-      puts "This is card number #{@guesses.count + 1} out of #{deck.count}."
+    while current_card
+      puts "This is card number #{guesses.count + 1} out of #{deck.count}."
       puts "\n"
       puts current_card.question
       puts "\n"
@@ -48,6 +48,6 @@ class Round
       puts "\n"
     end
     puts "****** Game over! ******"
-    puts "You had #{@number_correct} correct guesses out of #{deck.count} for a score of #{percent_correct}."
+    puts "You had #{number_correct} correct guesses out of #{deck.count} for a score of #{percent_correct}."
   end
 end
